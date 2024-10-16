@@ -28,11 +28,9 @@ const register = async function (req, res) {
     );
     const isExist = u.length > 0;
     if (isExist)
-      return res
-        .status(StatusCodes.BAD_REQUEST)
-        .json({
-          msg: `User already registered: check your username or email:(`,
-        });
+      return res.status(StatusCodes.BAD_REQUEST).json({
+        msg: `User already registered: check your username or email:(`,
+      });
 
     //Guard password length
     if (password.length < 8)
